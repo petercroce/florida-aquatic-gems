@@ -1,0 +1,79 @@
+// Fonts
+$font_stack:                   "Open Sans", sans-serif;
+$icon_font_family:             "NewYorkAve2016";
+
+// Brand Colors
+$brand_primary:                #08bbf7;
+$brand_secondary:              #f8b616;
+$brand_gray_dark:              #414141;
+$brand_gray_light:             #717171;
+$brand_primary_opacity:        rgba($brand_primary, 0.8);
+$brand_secondary_opacity:      rgba($brand_secondary, 0.8);
+$brand_gray_dark_opacity:      rgba($brand_gray_dark, 0.8);
+$brand_gray_light_opacity:     rgba($brand_gray_light, 0.8);
+
+// Margins
+$general_margin:               30px;
+$vertical_margin:              75px;
+$vertical_margin_top:          75px;
+$vertical_margin_bottom:       75px;
+$horizontal_margin:            50px;
+
+// Borders
+$border:                       1px solid #eaeaea;
+
+// Buttons
+$button_normal_color:          #fff;
+$button_normal_bg:             $brand_primary;
+$button_normal_hover_color:    $brand_primary;
+$button_normal_hover_bg:       transparent;
+
+$button_highlight_color:       $brand_gray_dark;
+$button_highlight_bg:          #fff;
+$button_highlight_hover_color: #fff;
+$button_highlight_hover_bg:    transparent;
+
+// Forms
+$form_border_color:            #eaeaea;
+
+//Element Styles
+$feature_area_bg:              rgba(darken($brand_primary, 30%), 0.95);
+$main_bg:                      rgba(white, 0.95);
+$secondary_bg:                 rgba($brand_primary, 0.95);
+$ternary_bg:                   $main_bg;
+$pre_footer_bg:                rgba($brand_gray_dark, 0.95);
+$dark_gray_bg:                 rgba($brand_gray_dark, 0.5);
+$main_link_color:              lighten($brand_gray_light, 25%);
+$main_link_hover:              $brand_primary;
+$main_title_link_color:        lighten($brand_gray_dark, 25%);
+$main_title_link_hover:        $brand_primary;
+$head_link_color:              darken(#ffffff, 20%);
+$head_link_hover:              $brand_primary;
+$head_title_link_color:        $head_link_color;
+$head_title_link_hover:        $head_link_hover;
+$cta_link_color:               #fff;
+$cta_link_hover:               #fff;
+$cta_title_link_color:         $cta_link_color;
+$cta_title_link_hover:         $cta_link_hover;
+
+// Social Media Brand Colors
+$twitter:                      #00aced;
+$facebook:                     #3b5998;
+$googleplus:                   #dd4b39;
+$pinterest:                    #cb2027;
+$linkedin:                     #007bb6;
+$youtube:                      #bb0000;
+$vimeo:                        #aad450;
+$tumblr:                       #32506d;
+$instagram:                    #517fa4;
+$flickr:                       #ff0084;
+$dribbble:                     #ea4c89;
+$quora:                        #a82400;
+$foursquare:                   #0072b1;
+$forrst:                       #5B9A68;
+$vk:                           #45668e;
+$wordpress:                    #21759b;
+$stumbleupon:                  #EB4823;
+$yahoo:                        #7B0099;
+$blogger:                      #fb8f3d;
+$soundcloud:                   #ff3a00;

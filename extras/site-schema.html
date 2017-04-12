@@ -1,0 +1,31 @@
+<!-- For more information on json-ld look here:
+  https://whitespark.ca/blog/the-json-ld-markup-guide-to-local-business-schema
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "url": ...,
+  "logo": ...,
+  "hasMap": "https://www.google.com/maps/place/...",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": ...,
+    "addressRegion": ...,
+    "streetAddress": ...
+  },
+  "description": ...,
+  "name": ...,
+  "telephone": ...,
+  "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": ...,
+    "longitude": ...
+  },
+  "sameAs" : [ "https://www.facebook.com/...",
+    "https://twitter.com/...",
+    "https://plus.google.com/..."]
+  }
+</script>

@@ -1,0 +1,9 @@
+{
+	"manifest" : "1",
+	"version" : "1.0.0",
+	"enableEditorJS": false,
+	"responsive" : true,
+	"glyph-icons" : true,
+	"is-dark" : false,
+	"variations" : []
+}

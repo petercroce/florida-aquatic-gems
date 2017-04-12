@@ -1,0 +1,22 @@
+#icontent {
+  z-index: 0;
+
+  .bg-img-wrap {
+    &:before {
+      content:"Content Area";
+      height: auto;
+      width: auto;
+      font-size: 1.5em;
+      padding: 0.5em;
+    }
+  }
+
+  .wsite-elements {
+    // background: #fff;
+    padding: 1em;
+  }
+
+  #post-footer .wsite-text {
+      display: block;
+  }
+}

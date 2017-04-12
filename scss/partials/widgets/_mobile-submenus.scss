@@ -1,0 +1,61 @@
+#nav {
+  .wsite-menu-default {
+    position: relative;
+
+    @include device(laptop, desktop) {
+        .submenu__show-more, .wsite-menu {
+            display: none;
+        }
+    }
+
+    li {
+      overflow: hidden;
+
+      .wsite-menu {
+        margin: 0 !important;
+        background: #fafafa;
+        padding: 0 0 0 15px;
+
+        li {
+          background: transparent;
+        }
+
+        a {
+          transition: all 0.4s ease;
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+          max-height: 0 !important;
+        }
+      }
+
+      .submenu__show-more {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 16px;
+        font-size: 24px;
+        margin-right: 10px;
+        transition: all 0.4s ease;
+
+        &:before {
+          font-family: $icon_font_family;
+          content: "\f01b";
+        }
+      }
+
+      &.submenu--open {
+        .wsite-menu {
+          a {
+            padding-top: 16px !important;
+            padding-bottom: 16px !important;
+            max-height: 64px !important;
+          }
+        }
+
+        .submenu__show-more {
+          transform: rotate(-225deg) !important;
+        }
+      }
+    }
+  }
+}

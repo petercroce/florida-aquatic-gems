@@ -1,0 +1,47 @@
+<script>
+  (function(){
+    var data = {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": {{Page URL}}
+        },
+        "headline": {{SCHEMA - Article Headline}},
+        "image": {
+          "@type": "ImageObject",
+          "url": {{SCHEMA - Article Image}},
+          "height": {{SCHEMA - Article Image Height}},
+          "width": {{SCHEMA - Article Image Width}}
+        },
+        "datePublished": {{SCHEMA - Article datePublished}},
+        "dateModified": {{SCHEMA - Article datePublished}},
+        "author": {
+            "@type": "Person",
+            "name": "...",
+            "url": "..."
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "...",
+            "logo" : {
+                "@type": "ImageObject",
+                "url": "http://.../files/theme/...",
+                "height": ...,
+                "width": ...
+             },
+            "url": "...",
+            "sameAs" : [ "https://www.facebook.com/...",
+              "https://twitter.com/...",
+              "https://plus.google.com/..."]
+        },
+        "description": {{SCHEMA - Article Description}}
+    }
+
+    var script = document.createElement('script');
+    script.type = "application/ld+json";
+    script.innerHTML = JSON.stringify(data);
+    var article = document.getElementsByClassName('blog-post');
+    article[0].appendChild(script);
+  })(document);
+</script>

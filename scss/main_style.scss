@@ -1,0 +1,6 @@
+// @import url("animate.css"); // <= A standard CSS import can be added as usual
+@import 'variables';
+@import 'resets';
+@import 'mixins';
+@import 'partials/**/*';
+@import 'widgets/**/*';
