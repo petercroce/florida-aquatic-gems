@@ -1,0 +1,19 @@
+<!-- This goes somewhere in your blog HTML template -->
+<div class="blog-meta">
+  <div class="blog-meta__controls">
+    <div class="container">
+      <div class="button-wrap">
+        <button class="categories selected">Categories</button>
+        <button class="archives">Archive</button>
+        <button class="search">Search</button>
+      </div>
+    </div>
+  </div>
+  <div class="blog-meta__content">
+    <div class="container">
+      <div class="blog-meta__categories visible">{blog-categories:content global="false"}</div>
+      <div class="blog-meta__archives">{blog-archives:content global="false"}</div>
+      <div class="blog-meta__search">{search-bar:content global="false"}</div>
+    </div>
+  </div>
+</div>

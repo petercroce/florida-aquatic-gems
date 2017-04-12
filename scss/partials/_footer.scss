@@ -1,0 +1,37 @@
+#pre-footer {
+  padding: $vertical_margin 0;
+  position: relative;
+  min-height: 120px;
+
+  // Use if pre-footer has color background
+  // h2, .paragraph {
+  //   color: #fff;
+  // }
+
+  .wsite-multicol-col {
+    vertical-align: middle;
+  }
+
+}
+
+#footer {
+  background: #fff;
+  border-top: $border;
+  padding: $vertical_margin 0;
+}
+
+#post-footer {
+  background: #fff;
+  padding: 15px 0;
+  border-top: $border;
+
+  .wsite-multicol-col {
+    vertical-align: middle;
+  }
+  .paragraph{
+    font-size: 1rem !important;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }  
+}

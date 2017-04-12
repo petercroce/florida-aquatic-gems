@@ -1,0 +1,145 @@
+.container {
+  position: relative;
+  margin: auto;
+  padding: 0 $horizontal_margin;
+  @include device(laptop) {max-width: 1024px;}
+  @include device(desktop) {max-width: 1140px;}
+  width: 100%;
+  z-index: 10;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+#content {
+  height: auto;
+  // overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#main {
+  background: #fff;
+  padding: $vertical_margin 0;
+  position: relative;
+
+  .bg-img-wrap {
+    &:before {
+      background: rgba(#fff, 0.95);
+    }
+  }
+}
+
+.section {
+    width: 100%;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    padding: $vertical_margin 0;
+    position: relative;
+
+    &.overlay {
+        &.overlay--dark {
+            .bg-img-wrap:before {
+                background: rgba($brand_gray_dark, .85);
+            }
+
+            .fa, .paragraph, h1, h2 {
+                color: #fff;
+                a,
+                a:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+        &.overlay--light {
+            .bg-img-wrap:before {
+                background: rgba(#fff, .85);
+            }
+
+            .fa, .paragraph, h1, h2 {
+                color: $brand_gray_dark;
+                a,
+                a:hover {
+                    color: $brand_gray_dark;
+                }
+            }
+        }
+
+        .wsite-elements {
+            position: relative;
+            z-index: 5;
+        }
+    }
+}
+
+.bg-img-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 3;
+
+  img {
+    width: auto;
+    min-width: 100vw;
+    height: auto;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+}
+
+
+.wsite-section {
+  padding: $vertical_margin_top 0 $vertical_margin_bottom;
+  position: relative;
+
+  // Sections with image BG
+  &.wsite-section-bg-image {
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    // .wsite-section-elements {
+    //   i, h2, label, .paragraph {
+    //     color: #fff;
+    //   }
+    // }
+  }
+
+  // Sections with video BG
+  &.wsite-section-bg-video {
+    &:after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}

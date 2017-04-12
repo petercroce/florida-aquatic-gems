@@ -1,0 +1,143 @@
+#nav {
+  // position: relative;
+  // z-index: 30;
+  padding: 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: stretch;
+    max-width: none;
+    padding: $general_margin;
+    position: fixed;
+
+    @include device(laptop, desktop) {
+      .mobile-controls {
+        display: none;
+      }
+    }
+  }
+
+  @include device(smartphone){
+    .wsite-logo img {
+      max-height: 80px;
+    }
+  }
+
+  @include device(smartphone, tablet){
+    padding: 0;
+
+    &.active{
+      .mobile-controls {
+        .mobile-open {opacity: 0 !important;}
+        .mobile-close {opacity: 1 !important;}
+      }
+
+      .wsite-menu-default {
+        li {
+          a {
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+            max-height: 65px !important;
+          }
+        }
+      }
+    }
+
+    .container {
+      flex-direction: column;
+      padding: 0;
+
+      .mobile-header {
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .mobile-controls {
+          position: relative;
+          height: 45px;
+          width: 45px;
+          background: none;
+          border: none;
+          outline: none;
+          right: -6px;
+
+          .fa {
+            transition: opacity 0.4s ease;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+
+            &.mobile-open {
+              opacity: 1;
+            }
+            &.mobile-close {
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      .wsite-menu-default {
+        display: block;
+
+        li {
+          padding: 0;
+          margin: 0;
+          background: #fff;
+
+          a {
+            display: block;
+            height: auto;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            max-height: 0;
+            border: none;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wsite-menu-default {
+    display: flex;
+
+    li {
+      padding: 0;
+      margin: 0;
+      margin-right: 5px;
+
+      a {
+        display: inline-block;
+        transition: all 0.4s ease;
+        border-width: 2px;
+        border-style: solid;
+        border-color: $button_highlight_bg;
+        padding: 8px 32px;
+        font-size: 18px;
+        background-color: $button_highlight_bg;
+        color: $button_highlight_color;
+        white-space: nowrap;
+
+        &:hover {
+          background-color: $button_highlight_hover_bg;
+          color: $button_highlight_hover_color;
+        }
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

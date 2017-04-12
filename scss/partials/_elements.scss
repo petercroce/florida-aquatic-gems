@@ -1,0 +1,488 @@
+// Standard HTML Elements
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1em;
+}
+
+a, p, span, label, h1, h2, h3, h4, h5, h6 {
+  font-family: $font_stack;
+}
+
+ol, p, ul {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+li {
+  padding-left: .25em;
+  margin-bottom: .75em;
+}
+
+div.paragraph {
+  margin-bottom: 1.5em;
+  line-height: 1.3;
+  font-size: 1.5rem;
+
+  a, span {
+    font-family: inherit;
+  }
+
+  ol, ul {
+    padding-left: 1.5em !important;
+    font-size: inherit !important;
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+
+    li {
+      font-size: inherit;
+      color: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+  }
+}
+
+blockquote {
+  margin-bottom: 1.5em;
+  padding: 2em;
+  margin-left: 0;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1.5;
+
+  &:before {
+    position: absolute;
+    content: "“";
+    top: -0.25rem;
+    left: .75rem;
+    font-size: 60px;
+    font-family: sans-serif;
+  }
+}
+
+.wsite-image {
+  div {
+    font-family: $font_stack;
+    color: $brand_gray_light;
+    margin-top: 0.5em;
+  }
+}
+
+main {
+  blockquote {
+    color: $brand_gray_dark;
+    border-left: 2px solid $brand_primary;
+    background: lighten($brand_gray_light, 50%);
+    &:before {
+      color: lighten($brand_gray_light, 35%);
+    }
+  }
+  b, strong {
+    font-weight: 400 !important;
+  }
+
+  .wsite-content-title {
+    margin-bottom: 0.65em;
+  }
+
+  div.paragraph {
+    margin-bottom: 1.5em;
+    ol, ul {
+      margin-top: 1.5em !important;
+      margin-bottom: 1.5em !important;
+      padding-left: 1.5em !important;
+      font-size: inherit !important;
+      color: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+
+      li {
+        font-size: inherit;
+        color: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none !important;
+  transition: color 0.4s ease;
+}
+
+.wsite-content-title, .blog-category-title {
+  // @include word-wrap;
+  font {
+    display: block;
+    line-height: inherit;
+  }
+}
+
+#header {
+  .wsite-content-title {
+    a {
+      color: $head_title_link_color !important;
+
+      &:hover {
+        color: $head_title_link_hover !important;
+      }
+    }
+  }
+  .paragraph {
+    a {
+      color: $head_title_link_color !important;
+
+      &:hover {
+        color: $head_title_link_hover !important;
+      }
+    }
+  }
+}
+
+#main {
+  .wsite-content-title {
+    color: $brand_gray_dark;
+
+    a {
+      color: $main_title_link_color !important;
+
+      &:hover {
+        color: $main_title_link_hover !important;
+      }
+    }
+  }
+  .paragraph {
+    color: $brand_gray_light;
+
+    a {
+      color: $main_link_color !important;
+
+      &:hover {
+        color: $main_link_hover !important;
+      }
+    }
+  }
+}
+
+#call-to-action {
+  blockquote {
+    color: #fff;
+    border-left: 2px solid #fff;
+    // background: lighten($brand_gray_light, 50%);
+    &:before {
+      color: #fff;
+    }
+  }
+  .wsite-content-title {
+    a {
+      color: $cta_title_link_color !important;
+
+      &:hover {
+        color: $cta_title_link_hover !important;
+      }
+    }
+  }
+  .paragraph {
+    a {
+      color: $cta_title_link_color !important;
+
+      &:hover {
+        color: $cta_title_link_hover !important;
+      }
+    }
+  }
+}
+
+// Weebly Elements
+
+#content{
+  .wsite-content-title {
+    @include device(tablet, smartphone) {font-size: 2.5rem !important;margin-bottom: 2rem;}
+  }
+}
+
+.wsite-button {
+  background-image: none !important;
+  border-style: solid;
+  transition: all 0.4s ease;
+
+  &, &.wsite-button-large {
+    padding: 8px 32px;
+    border-width: 2px;
+    font-size: 18px !important;
+  }
+
+  &.wsite-button-small {
+    padding: 6px 24px;
+    border-width: 2px;
+    font-size: 14px !important;
+  }
+
+  .wsite-button-inner {
+    background-image: none !important;
+    padding: 0;
+    transition: all 0.4s ease;
+  }
+
+  &, &.wsite-button-normal {
+    background-color: $brand_primary;
+    border-color: $brand_primary;
+    color: #ffffff !important;
+    &:hover {
+      background-color: transparent;
+
+      .wsite-button-inner {
+        color: $brand_primary;
+      }
+    }
+  }
+
+  &.wsite-button-highlight{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: $brand_gray_dark !important;
+    &:hover {
+      background-color: transparent;
+
+      .wsite-button-inner {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+// Remove additional space above and below the ebook child pages
+// Does not work on mobile
+// @include device(tablet, laptop, desktop) {
+//   .wsite-background-26,
+//   .wsite-background-27,
+//   .wsite-background-29,
+//   .wsite-background-31,
+//   .wsite-background-33 {
+//     & [style*="height: auto;"] {
+//       padding-top: 35px;
+//       padding-bottom: 35px;
+//     }
+//   }
+// }
+
+[id$="-gallery"] {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -$vertical_margin_top !important;
+  & ~ div {
+    margin-bottom: -$vertical_margin_bottom;
+  }
+  @include device(smartphone) {
+    display: flex;
+    flex-wrap: wrap;
+    & > div {
+      width: 50% !important;
+    }
+  }
+}
+
+.imageGallery {
+  div[id*="insideImageContainer"] {
+    margin: 0 !important;
+  }
+}
+
+.wsite-form-container {
+  margin-top: 0 !important;
+
+  .wsite-content-title:empty {
+    margin-bottom: 0;
+
+    & + div:first-of-type .wsite-form-field {
+      margin-top: 0 !important;
+    }
+  }
+
+  .wsite-form-field {
+    // display: flex;
+    // flex-direction: column-reverse;
+    margin-bottom: 1.5rem !important;
+
+    // &.wsite-name-field {
+    //   display: block;
+    //
+    //   .wsite-form-input-first-name {
+    //     label:after {
+    //       content: " Name";
+    //     }
+    //   }
+    //
+    //   .wsite-form-input-last-name {
+    //     label:after {
+    //       content: " Name";
+    //     }
+    //   }
+    //
+    //    & > label {
+    //      display: none;
+    //    }
+    // }
+
+    label {
+      font-size: 1em !important;
+      margin-top: 3px;
+
+    }
+
+    .form-required {
+      color: $brand_primary;
+
+    }
+
+    .wsite-form-phone-separator {
+      line-height: 3rem;
+    }
+  }
+
+  input, textarea {
+    color: $brand_gray_dark;
+    border: none;
+    background: #ffffff;
+    font-family: $font_stack;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 8px !important;
+  }
+
+  select {
+    color: $brand_gray_dark;
+    border: none;
+    background: #ffffff;
+    font-family: $font_stack;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 8px !important;
+    height: auto;
+  }
+
+  .wsite-input-width-370px {
+    max-width: none !important;
+  }
+}
+
+.wsite-multicol-col {
+  @include device(tablet) {width: 100% !important;display: block;}
+  @include device(smartphone) {
+    width: 100% !important;
+    display: block;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+#main .wsite-multicol-col,
+#footer .wsite-multicol-col {
+  @include device(smartphone, tablet) {
+    &:not(:last-child) {
+      margin-bottom: $vertical_margin_bottom !important;
+    }
+  }
+}
+
+.wsite-multicol {
+  .wsite-multicol-table-wrap {
+    @include device(tablet, smartphone) {margin:0 !important;}
+  }
+}
+
+.wsite-elements {
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.wcustomhtml {
+  // overflow-x: hidden;
+  overflow: visible !important;
+}
+
+// .wsite-spacer {
+//   @include device(tablet) {display: none;}
+//   @include device(smartphone) {display: none;}
+// }
+
+/* Fancybox overrides */
+
+.fancybox-skin {
+  background: transparent !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.fancybox-title {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: normal;
+}
+
+.fancybox-close, .fancybox-next span, .fancybox-prev span {
+  background: none !important;
+  width: auto;
+  height: auto;
+}
+
+.fancybox-close:before, .fancybox-next span:before, .fancybox-prev span:before {
+  color: white !important;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 0.75em;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.fancybox-close:hover:before, .fancybox-next:hover span:before {
+  color: #fff !important;
+}
+
+.fancybox-prev {
+  &:hover span:before {
+    color: #fff !important;
+  }
+  span:before {
+    position: relative;
+    left: -10px;
+    content: '\3008';
+  }
+}
+
+.fancybox-next span:before {
+  position: relative;
+  right: -10px;
+  content: '\3009';
+}
+
+.fancybox-close {
+  top: 20px;
+  right: 20px;
+  &:before {
+    content: '\00D7';
+  }
+}
