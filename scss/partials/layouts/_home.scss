@@ -4,7 +4,19 @@
       .nav-outer-wrap {
         visibility: visible;
         opacity: 1;
+        background-color: transparent;
       }
     }
+  }
+  // Do not display any divs following a script tag
+  // with a src value ending in scripts.min.js.
+  //
+  // We do this because Weebly creates divs with padding and
+  // without classes at the end of this page, and we don't want a footer.
+  // This is a performance-heavy selector. If a method of removing those
+  // elements from the page becomes available in the future,
+  // it should be used instead.
+  script[src$="scripts.min.js"] ~ div {
+    display: none;
   }
 }

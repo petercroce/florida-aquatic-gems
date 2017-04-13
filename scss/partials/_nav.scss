@@ -34,9 +34,13 @@
 
 body.nav-open {
   nav {
-    visibility: visible;
-    opacity: 1;
-    z-index: 15;
+    .container {
+      .nav-outer-wrap, .hamburger {
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 15;
+      }
+    }
   }
   .site-controls {
     max-height: 100%;
@@ -47,7 +51,6 @@ body.nav-open {
   }
   .hamburger {
     .hamburger-inner {
-      background-color: #fff !important;
     }
   }
 }
@@ -59,7 +62,7 @@ body.no-scroll {
 
 // Sup with this?
 button.hamburger.hamburger--squeeze {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
 }
@@ -72,4 +75,8 @@ nav {
   .container {
     max-width: none;
   }
+}
+
+.uploadplayer-shield {
+  z-index: 0;
 }
