@@ -527,9 +527,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: left;
   background: #fff;
   overflow: hidden;
@@ -551,7 +551,22 @@ a {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1500px; }
+    @media only screen and (min-width: 993px) {
+      #nav .container .nav-outer-wrap ul.wsite-menu-default {
+        margin: 10vh 5vw; } }
+    #nav .container .nav-outer-wrap ul.wsite-menu-default li.wsite-menu-item-wrap {
+      font-size: 2.8rem; }
+      #nav .container .nav-outer-wrap ul.wsite-menu-default li.wsite-menu-item-wrap > a:before {
+        content: ""; }
+      #nav .container .nav-outer-wrap ul.wsite-menu-default li.wsite-menu-item-wrap a:before {
+        font-family: "AquaticGems";
+        content: ""; }
 
 body.nav-open nav .container .nav-outer-wrap, body.nav-open nav .container .hamburger {
   visibility: visible !important;
