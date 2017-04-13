@@ -553,9 +553,9 @@ a {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
 
-body.nav-open nav {
-  visibility: visible;
-  opacity: 1;
+body.nav-open nav .container .nav-outer-wrap, body.nav-open nav .container .hamburger {
+  visibility: visible !important;
+  opacity: 1 !important;
   z-index: 15; }
 
 body.nav-open .site-controls {
@@ -566,14 +566,11 @@ body.nav-open .site-controls {
 body.nav-open .site-menu {
   z-index: 50; }
 
-body.nav-open .hamburger .hamburger-inner {
-  background-color: #fff !important; }
-
 body.no-scroll {
   overflow-y: scroll; }
 
 button.hamburger.hamburger--squeeze {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0; }
 
@@ -582,6 +579,9 @@ button.hamburger.hamburger--squeeze {
 
 nav .container {
   max-width: none; }
+
+.uploadplayer-shield {
+  z-index: 0; }
 
 .header--full #header {
   min-height: 100vh; }
@@ -616,7 +616,11 @@ nav .container {
 
 .home-page #nav .container .nav-outer-wrap {
   visibility: visible;
-  opacity: 1; }
+  opacity: 1;
+  background-color: transparent; }
+
+.home-page script[src$="scripts.min.js"] ~ div {
+  display: none; }
 
 .landing-page #header {
   min-height: 400px; }
