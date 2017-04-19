@@ -47,7 +47,7 @@ a {
       max-width: 1024px; } }
   @media only screen and (min-width: 1441px) {
     .container {
-      max-width: 1140px; } }
+      max-width: 1500px; } }
   .container > :last-child {
     margin-bottom: 0; }
 
@@ -163,8 +163,6 @@ a {
     padding-left: 0; }
   #icontent #post-footer .wsite-text {
     display: block; }
-  #icontent.home-page .wsite-section-wrap .wsite-section-content {
-    display: none !important; }
 
 *, ::after, ::before {
   box-sizing: border-box; }
@@ -518,6 +516,8 @@ a {
     top: 0;
     left: 0;
     z-index: 1; }
+  #header .container {
+    padding: 0; }
 
 .header--full #header {
   min-height: 100vh; }
@@ -610,7 +610,7 @@ a {
             width: 50%; } }
         @media only screen and (min-width: 993px) {
           #nav .container .nav-outer-wrap .nav-inner-wrap ul.wsite-menu-default li.wsite-menu-item-wrap {
-            width: 33%; } }
+            width: 33.33%; } }
         #nav .container .nav-outer-wrap .nav-inner-wrap ul.wsite-menu-default li.wsite-menu-item-wrap a {
           color: #fff;
           background-color: rgba(19, 247, 205, 0.35);
@@ -624,14 +624,6 @@ a {
           #nav .container .nav-outer-wrap .nav-inner-wrap ul.wsite-menu-default li.wsite-menu-item-wrap a:before {
             font-family: "AquaticGems";
             content: ""; }
-    #nav .container .nav-outer-wrap .nav-inner-wrap .nav-title {
-      margin-top: auto; }
-      #nav .container .nav-outer-wrap .nav-inner-wrap .nav-title .wsite-elements.wsite-not-footer {
-        height: 100% !important; }
-      #nav .container .nav-outer-wrap .nav-inner-wrap .nav-title h2, #nav .container .nav-outer-wrap .nav-inner-wrap .nav-title .paragraph {
-        color: #fff; }
-        #nav .container .nav-outer-wrap .nav-inner-wrap .nav-title h2 a, #nav .container .nav-outer-wrap .nav-inner-wrap .nav-title .paragraph a {
-          color: #fff; }
 
 body.nav-open .hamburger {
   visibility: visible !important;

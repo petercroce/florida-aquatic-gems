@@ -3,7 +3,7 @@
   margin: auto;
   padding: 0 $horizontal_margin;
   @include device(laptop) {max-width: 1024px;}
-  @include device(desktop) {max-width: 1140px;}
+  @include device(desktop) {max-width: 1500px;}
   width: 100%;
 
   & > :last-child {

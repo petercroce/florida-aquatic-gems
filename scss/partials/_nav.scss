@@ -40,7 +40,7 @@
             font-size: 2rem;
             width: 100%;
             @include device(tablet) {width: 50%;}
-            @include device(desktop, laptop) {width: 33%;}
+            @include device(desktop, laptop) {width: 33.33%;}
             padding-left: 0;
             margin-bottom: 0;
             a {
@@ -59,19 +59,6 @@
                 font-family: $icon_font_family;
                 content: $icon_font_map-pin;
               }
-            }
-          }
-        }
-        .nav-title {
-          // This is where the Aquatic Gems title will go
-          margin-top: auto;
-          .wsite-elements.wsite-not-footer {
-            height: 100% !important;
-          }
-          h2, .paragraph {
-            color: #fff;
-            & a {
-              color: #fff;
             }
           }
         }
