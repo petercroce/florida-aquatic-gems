@@ -6,6 +6,7 @@
   }
   &:before {
     background-color: rgba($brand_gray_light, 0.3);
+    background-image: linear-gradient(transparent, rgba($brand_gray_light, 0.75));
     content: "";
     position: absolute;
     height: 100%;
