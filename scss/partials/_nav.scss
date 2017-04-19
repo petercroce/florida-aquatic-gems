@@ -46,14 +46,14 @@
             a {
               color: #fff;
               // Boxes around the items
-              background-color: rgba(19, 247, 205, 0.35);
+              background-color: rgba($brand_primary, 0.35);
               display: block;
               padding: 0.2em;
               padding-left: 1em;
               margin-bottom: 0.2em;
               margin-right: 0.2em;
               &:hover {
-                background-color: rgba(19, 247, 205, 0.6);
+                background-color: rgba($brand_primary, 0.6);
               }
               &:before {
                 font-family: $icon_font_family;

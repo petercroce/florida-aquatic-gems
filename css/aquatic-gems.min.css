@@ -230,7 +230,7 @@ blockquote {
 
 main blockquote {
   color: #414141;
-  border-left: 2px solid #08bbf7;
+  border-left: 2px solid #13f7cd;
   background: #f1f1f1; }
   main blockquote:before {
     color: #cacaca; }
@@ -283,14 +283,14 @@ a {
   #main .wsite-content-title a {
     color: #818181 !important; }
     #main .wsite-content-title a:hover {
-      color: #08bbf7 !important; }
+      color: #13f7cd !important; }
 
 #main .paragraph {
   color: #717171; }
   #main .paragraph a {
     color: #b1b1b1 !important; }
     #main .paragraph a:hover {
-      color: #08bbf7 !important; }
+      color: #13f7cd !important; }
 
 #call-to-action blockquote {
   color: #fff;
@@ -332,13 +332,13 @@ a {
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease; }
   .wsite-button, .wsite-button.wsite-button-normal {
-    background-color: #08bbf7;
-    border-color: #08bbf7;
+    background-color: #13f7cd;
+    border-color: #13f7cd;
     color: #ffffff !important; }
     .wsite-button:hover, .wsite-button.wsite-button-normal:hover {
       background-color: transparent; }
       .wsite-button:hover .wsite-button-inner, .wsite-button.wsite-button-normal:hover .wsite-button-inner {
-        color: #08bbf7; }
+        color: #13f7cd; }
   .wsite-button.wsite-button-highlight {
     background-color: #ffffff;
     border-color: #ffffff;
@@ -382,7 +382,7 @@ a {
       font-size: 1em !important;
       margin-top: 3px; }
     .wsite-form-container .wsite-form-field .form-required {
-      color: #08bbf7; }
+      color: #13f7cd; }
     .wsite-form-container .wsite-form-field .wsite-form-phone-separator {
       line-height: 3rem; }
   .wsite-form-container input, .wsite-form-container textarea {
@@ -508,9 +508,8 @@ a {
   #header h1, #header h2, #header .paragraph {
     color: #fff; }
   #header:before {
-    background-color: rgba(113, 113, 113, 0.3);
-    background-image: -webkit-linear-gradient(transparent, rgba(113, 113, 113, 0.75));
-    background-image: linear-gradient(transparent, rgba(113, 113, 113, 0.75));
+    background-image: -webkit-linear-gradient(transparent, rgba(113, 113, 113, 0.65) 95%);
+    background-image: linear-gradient(transparent, rgba(113, 113, 113, 0.65) 95%);
     content: "";
     position: absolute;
     height: 100%;
@@ -541,10 +540,10 @@ a {
   background: none; }
 
 .header--primary-overlay #header .wsite-section.wsite-section-bg-image:after {
-  background: rgba(8, 187, 247, 0.3); }
+  background: rgba(19, 247, 205, 0.3); }
 
 .header--primary-overlay #header .wsite-section.wsite-section-bg-video:after {
-  background: rgba(8, 187, 247, 0.3); }
+  background: rgba(19, 247, 205, 0.3); }
 
 .no-header i.fa.fa-nya {
   color: #414141; }
@@ -691,7 +690,7 @@ nav .container {
   font-size: 2rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  color: #08bbf7;
+  color: #13f7cd;
   outline: 0; }
 
 #wsite-search-content #wsite-search-header #wsite-search-submit {
@@ -706,7 +705,7 @@ nav .container {
   -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease; }
   #wsite-search-content a:hover {
-    color: #08bbf7;
+    color: #13f7cd;
     text-decoration: none; }
 
 #wsite-search-content #wsite-search-list p {
@@ -727,7 +726,7 @@ nav .container {
   transition: color 0.4s ease;
   white-space: initial; }
   #wsite-search-content #wsite-search-list h3:hover {
-    color: #08bbf7;
+    color: #13f7cd;
     text-decoration: none; }
 
 .sections-page #main {
@@ -746,10 +745,10 @@ nav .container {
   background: none; }
 
 .sections--primary-overlay #main .wsite-section.wsite-section-bg-image:after {
-  background: rgba(8, 187, 247, 0.75); }
+  background: rgba(19, 247, 205, 0.75); }
 
 .sections--primary-overlay #main .wsite-section.wsite-section-bg-video:after {
-  background: rgba(8, 187, 247, 0.75); }
+  background: rgba(19, 247, 205, 0.75); }
 
 /*!
  * Hamburgers
