@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: $brand_gray_light;
+}
+
 body {
   overflow-y: scroll;
 }

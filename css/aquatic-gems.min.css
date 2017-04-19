@@ -167,6 +167,12 @@ a {
 *, ::after, ::before {
   box-sizing: border-box; }
 
+::-moz-selection {
+  background: #717171; }
+
+::selection {
+  background: #717171; }
+
 body {
   overflow-y: scroll; }
 
