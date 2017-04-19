@@ -63,7 +63,7 @@ gulp.task('stylesheets', function () {
                         })
           )
     // Compress and Optimize CSS
-    // .pipe(cleanCSS())
+    .pipe(cleanCSS())
     .pipe(concat(WEBSITE_NAME + '.min.css'))
     //Save CSS file
     .pipe(gulp.dest('css'))
