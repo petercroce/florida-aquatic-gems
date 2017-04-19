@@ -1,5 +1,10 @@
 #nav {
   .container {
+    .site-menu {
+      .hamburger {
+        z-index: 3;
+      }
+    }
     .nav-outer-wrap {
       // This is styling for the native weebly menu
       display: flex;
@@ -16,48 +21,81 @@
       transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
       visibility: hidden;
       opacity: 0;
-      ul.wsite-menu-default {
-        flex-direction: column;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+      z-index: 1;
+      .nav-inner-wrap {
         width: 100%;
+        display: flex;
+        flex-direction: column;
         @include device(laptop, desktop) {margin: 10vh 5vw;}
         max-width: 1500px;
         // What's our site-wide max-width going to be?
-        li.wsite-menu-item-wrap {
-          // Styles for the specific menu items
-          font-size: 2.8rem;
-          & > a {
-            &:before {
-              content: "";
-            }
-          }
-          a {
-            &:before {
-              font-family: $icon_font_family;
-              content: $icon_font_map-pin;
+        ul.wsite-menu-default {
+          flex-direction: row;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          width: 100%;
+          li.wsite-menu-item-wrap {
+            // Styles for the specific menu items
+            font-size: 2rem;
+            width: 100%;
+            @include device(tablet) {width: 50%;}
+            @include device(desktop, laptop) {width: 33%;}
+            padding-left: 0;
+            margin-bottom: 0;
+            a {
+              color: #fff;
+              // Boxes around the items
+              background-color: rgba(19, 247, 205, 0.35);
+              display: block;
+              padding: 0.2em;
+              padding-left: 1em;
+              margin-bottom: 0.2em;
+              margin-right: 0.2em;
+              &:hover {
+                background-color: rgba(19, 247, 205, 0.6);
+              }
+              &:before {
+                font-family: $icon_font_family;
+                content: $icon_font_map-pin;
+              }
             }
           }
         }
-      }
-      .nav-title {
-        // This is where the Aquatic Gems title will go
-
+        .nav-title {
+          // This is where the Aquatic Gems title will go
+          margin-top: auto;
+          .wsite-elements.wsite-not-footer {
+            height: 100% !important;
+          }
+          h2, .paragraph {
+            color: #fff;
+            & a {
+              color: #fff;
+            }
+          }
+        }
       }
     }
   }
 }
 
 body.nav-open {
-  nav {
-    .container {
-      .nav-outer-wrap, .hamburger {
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 15;
+  .hamburger {
+    .hamburger-inner {
+      background-color: #fff;
+      &::before, &::after {
+        background-color: $brand_gray_light;
       }
     }
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 15;
+  }
+  .nav-outer-wrap {
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 15;
   }
   .site-controls {
     max-height: 100%;
@@ -66,9 +104,8 @@ body.nav-open {
   .site-menu {
     z-index: 50;
   }
-  .hamburger {
-    .hamburger-inner {
-    }
+  .hamburger .hamburger-inner {
+    color: #fff;
   }
 }
 
@@ -80,8 +117,8 @@ body.no-scroll {
 // Sup with this?
 button.hamburger.hamburger--squeeze {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 20px;
+    right: 20px;
 }
 
 .hamburger--squeeze.is-active .hamburger-inner::before {

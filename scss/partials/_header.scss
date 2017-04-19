@@ -1,25 +1,104 @@
 #header {
   position: relative;
-
   // Use with color overlay
   h1, h2, .paragraph {
     color: #fff;
   }
-
-  .banner {
+  &:before {
+    background-color: rgba($brand_gray_light, 0.3);
+    content: "";
     position: absolute;
-    z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
     height: 100%;
     width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
 
-    .container {
-      max-width: 800px;
+.header--full {
+  #header {
+    min-height: 100vh;
+    .wsite-elements, .wsite-section-wrap {
+      height: 100vh;
+      .wsite-section {
+        min-height: 100vh;
+      }
     }
+  }
+}
 
+.header--gray-overlay {
+  #header {
+    .wsite-section {
+
+      // Headers with image BG
+      &.wsite-section-bg-image {
+        &:after {
+          background-color: rgba($brand_gray_light, 0.3);
+        }
+      }
+
+      // Headers with video BG
+      &.wsite-section-bg-video {
+        &:after {
+          background-color: rgba($brand_gray_light, 0.3);
+        }
+      }
+
+    }
+  }
+}
+
+.header--no-overlay {
+  #header {
+    .wsite-section {
+
+      // Headers with image BG
+      &.wsite-section-bg-image {
+        &:after {
+          background: none;
+        }
+      }
+
+      // Headers with video BG
+      &.wsite-section-bg-video {
+        &:after {
+          background: none;
+        }
+      }
+
+    }
+  }
+}
+
+.header--primary-overlay {
+  #header {
+    .wsite-section {
+
+      // Headers with image BG
+      &.wsite-section-bg-image {
+        &:after {
+          background: rgba($brand_primary, 0.3);
+        }
+      }
+
+      // Headers with video BG
+      &.wsite-section-bg-video {
+        &:after {
+          background: rgba($brand_primary, 0.3);
+        }
+      }
+
+    }
+  }
+}
+
+.no-header {
+  i.fa.fa-nya {
+    color: $brand_gray_dark;
+  }
+  .hamburger-inner {
+    background-color: $brand_gray_dark !important;
   }
 }

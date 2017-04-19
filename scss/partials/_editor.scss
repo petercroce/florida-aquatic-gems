@@ -1,6 +1,5 @@
 #icontent {
   z-index: 0;
-
   .bg-img-wrap {
     &:before {
       content:"Content Area";
@@ -10,13 +9,21 @@
       padding: 0.5em;
     }
   }
-
-  .wsite-elements {
-    // background: #fff;
-    padding: 1em;
+  li {
+    padding-left: 0;
   }
-
   #post-footer .wsite-text {
       display: block;
+  }
+  &.home-page {
+    // .wsite-element-section-highlight {
+    //   z-index: 3 !important;
+    // }
+    // Do not display the Weebly empty message on the home page
+    .wsite-section-wrap {
+      .wsite-section-content {
+        display: none !important;
+      }
+    }
   }
 }
