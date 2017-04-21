@@ -2,12 +2,25 @@
   #nav {
     .container {
       .nav-outer-wrap {
-        visibility: visible;
-        opacity: 1;
-        background-color: transparent;
+        @include device(smartphone) {
+          visibility: hidden;
+          opacity: 0;
+          background-color: #fff;
+          z-index: 4;
+        }
+        @include device(tablet, laptop, desktop) {
+          visibility: visible;
+          opacity: 1;
+          background-color: transparent;
+        }
       }
       .site-menu {
-        display: none;
+        @include device(smartphone) {
+          display: block;
+        }
+        @include device(tablet, laptop, desktop) {
+          display: none;
+        }
       }
     }
   }
