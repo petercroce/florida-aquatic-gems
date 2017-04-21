@@ -1,64 +1,99 @@
 #nav {
-  .container {
-    .site-menu {
-      .hamburger {
-        z-index: 3;
-      }
+  .hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    @include device(laptop, tablet, smartphone) {top: 15px; right: 15px;};
+    z-index: 4;
+    &:before {
+      content: "Menu";
+      color: #fff;
+      font-family: $font_stack;
+      font-size: $font_size;
+      padding-right: 20px;
+      vertical-align: top;
+      transition: all 0.4s ease;
+      position: relative;
     }
-    .nav-outer-wrap {
-      // This is styling for the native weebly menu
-      display: flex;
-      justify-content: center;
-      text-align: left;
+  }
+}
+.nav-outer-wrap {
+  // This is styling for the native weebly menu
+  display: flex;
+  justify-content: center;
+  text-align: left;
 
-      background: #fff;
-      overflow: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  .nav-inner-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include device(tablet) {margin: 5vw;}
+    @include device(laptop, desktop) {margin: 10vh 5vw;}
+    max-width: 1500px;
+    // What's our site-wide max-width going to be?
+    ul.wsite-menu-default {
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
       width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
-      visibility: hidden;
-      opacity: 0;
-      z-index: 1;
-      .nav-inner-wrap {
+      @include device(smartphone) {
+        overflow-y: scroll;
+        margin-top: 80px;
+        font-size: 1.5rem;
+      }
+      @include device(tablet) {font-size: 1.5rem;}
+      @include device(laptop) {font-size: 1.5rem;}
+      @include device(desktop) {font-size: 2.3rem;}
+      li.wsite-menu-item-wrap {
+        // Styles for the specific menu items
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        @include device(laptop, desktop) {margin: 10vh 5vw;}
-        max-width: 1500px;
-        // What's our site-wide max-width going to be?
-        ul.wsite-menu-default {
-          flex-direction: row;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-          width: 100%;
-          li.wsite-menu-item-wrap {
-            // Styles for the specific menu items
-            font-size: 2rem;
-            width: 100%;
-            @include device(tablet) {width: 50%;}
-            @include device(desktop, laptop) {width: 33.33%;}
-            padding-left: 0;
-            margin-bottom: 0;
-            a {
-              color: #fff;
-              // Boxes around the items
-              background-color: rgba($brand_primary, 0.35);
-              display: block;
-              padding: 0.2em;
-              padding-left: 1em;
-              margin-bottom: 0.2em;
-              margin-right: 0.2em;
-              &:hover {
-                background-color: rgba($brand_primary, 0.6);
-              }
-              &:before {
-                font-family: $icon_font_family;
-                content: $icon_font_map-pin;
-              }
+        @include device(tablet) {width: 50%;}
+        @include device(desktop, laptop) {width: 33.33%;}
+        padding-left: 0;
+        margin-bottom: 0;
+        a {
+          color: #fff;
+          // Boxes around the items
+          @include device(tablet, laptop, desktop) {
+            background-color: rgba($brand_gray_dark, 0.3);
+          }
+          display: block;
+          padding: 0.2em;
+          @include device(desktop) {padding: 0.25em; padding-left: 1em;}
+          padding-left: 1em;
+          margin-bottom: 0.2em;
+          margin-right: 0.2em;
+          &:hover {
+            background-color: rgba($brand_primary, 0.2);
+          }
+          &:before {
+            font-family: $icon_font_family;
+            content: $icon_font_map-pin;
+          }
+        }
+        // Only the first li should have the map icon
+        &:first-of-type {
+          a:before {
+            font-family: $icon_font_family;
+            content: $icon_font_map;
+            padding-right: 3px;
+          }
+        }
+        &#active {
+          a {
+            @include device(tablet, laptop, desktop) {
+              background-color: rgba($brand_primary, 0.2);
             }
           }
         }
@@ -68,21 +103,18 @@
 }
 
 body.nav-open {
-  .hamburger {
-    .hamburger-inner {
-      background-color: #fff;
-      &::before, &::after {
-        background-color: $brand_gray_light;
-      }
-    }
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 15;
-  }
   .nav-outer-wrap {
     visibility: visible !important;
     opacity: 1 !important;
-    z-index: 15;
+    z-index: 3;
+    background-image: linear-gradient($brand_gray_light, transparent);
+  }
+  #nav {
+    .hamburger {
+      &:before {
+        content: "Close";
+      }
+    }
   }
   .site-controls {
     max-height: 100%;
@@ -100,13 +132,6 @@ body.no-scroll {
   overflow-y: scroll;
 }
 
-
-// Sup with this?
-button.hamburger.hamburger--squeeze {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
 
 .hamburger--squeeze.is-active .hamburger-inner::before {
     opacity: 1;
