@@ -9,6 +9,7 @@
 
 body {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -291,10 +292,6 @@ a {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: -$vertical_margin_top !important;
-  & ~ div {
-    margin-bottom: -$vertical_margin_bottom;
-  }
   @include device(smartphone) {
     display: flex;
     flex-wrap: wrap;
