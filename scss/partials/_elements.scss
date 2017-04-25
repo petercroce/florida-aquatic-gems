@@ -31,14 +31,17 @@ li {
 }
 h2 {
   font-size: 5em;
+  color: $brand_gray_light;
 }
 div.paragraph {
   margin-bottom: 1.5em;
   line-height: 1.3;
   font-size: 1.5rem;
+  color: $brand_gray_light;
 
   a, span {
     font-family: inherit;
+    color: $brand_gray_light;
   }
 
   ol, ul {

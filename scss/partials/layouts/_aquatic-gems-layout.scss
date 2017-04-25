@@ -3,16 +3,39 @@
 }
 #expanded-info {
   display: flex;
+  @include device(smartphone) {flex-direction: column;}
+  @include device(tablet, laptop, desktop) {}
   .container {
     padding: 0;
     width: 50%;
+    @include device(smartphone) {width: 100%;}
+    height: 100%;
     margin: 0 auto;
     #expanded-info__written {
       width: 100%;
-      padding: 0 50px;
+      padding: 50px;
     }
     #expanded-info__map {
       width: 100%;
+      height: 100%;
+      & > div,
+      & > div > div,
+      & > div > div > div {
+        height: 100%;
+      }
+      .map-container {
+      	width: 100%;
+        height: 100%;
+      }
+      .map-container iframe {
+      	width: 100%;
+      	display: block;
+      	pointer-events: none;
+      	position: relative; /* IE needs a position other than static */
+      }
+      .map-container iframe.clicked {
+      	pointer-events: auto;
+      }
     }
   }
 }

@@ -20,4 +20,11 @@
     //   z-index: 3 !important;
     // }
   }
+  #expanded-info__map {
+    & > div,
+    & > div > div,
+    & > div > div > div {
+      height: inherit;
+    }
+  }
 }
