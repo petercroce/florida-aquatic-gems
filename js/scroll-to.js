@@ -1,10 +1,10 @@
 function initScrollTo()
 {
-  $('a[href^="#"]').on('click', function(event) {
-      var target = $(this.getAttribute('href'));
+  jQuery('a[href^="#"]').on('click', function(event) {
+      var target = jQuery(this.getAttribute('href'));
       if( target.length ) {
           event.preventDefault();
-          $('html, body').stop().animate({
+          jQuery('html, body').stop().animate({
               scrollTop: target.offset().top
           }, 1000);
       }
