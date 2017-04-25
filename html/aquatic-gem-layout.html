@@ -12,18 +12,18 @@
     <%include src="partials/header.html"%>
 
     <div id="photo-gallery">
-      <div class="container">{photo-gallery:content}</div>
+      <div class="container">{photo-gallery:content global="false"}</div>
     </div>
 
     <div id="expanded-info">
       <div class="container">
         <div id="expanded-info__written">
-          {expanded-info-written:content}
+          {expanded-info-written:content global="false"}
         </div>
       </div>
       <div class="container">
         <div id="expanded-info__map">
-          {expanded-info-map:content}
+          {expanded-info-map:content global="false"}
         </div>
       </div>
     </div>

@@ -1,19 +1,14 @@
 function initFullscreenMenu()
 {
+
   jQuery('.hamburger').on('click', function(){
-    // Fix body where it is
-    jQuery('body').css({
-                  'top': -(document.documentElement.scrollTop) + 'px',
-                  'position': 'fixed'})
-                  .addClass('no-scroll');
-    // Release body if the nav was open
-    jQuery('.nav-open').css({
-                       'top': -(document.documentElement.scrollTop) + 'px',
-                       'position': 'static'})
-                       .removeClass('no-scroll');
+    // Prevent jump
+    if ( jQuery(window).height() < jQuery('html').height() ) {
+      jQuery('html').addClass('scrollbar');
+    }
     // Add the classes to open nav and change hamburger to an 'x'
     jQuery('body').toggleClass('nav-open')
-                  .find('.hamburger').toggleClass('is-active');
+      .find('.hamburger').toggleClass('is-active');
   });
 }
 

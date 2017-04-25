@@ -8,6 +8,7 @@ function initGoogleMap()
   jQuery(infoMap).css("height", infoWrittenHeight +"px");
 
   // Add the '.clicked' class if map is clicked, remove it if mouse leaves
+  // Nice solution from: https://codepen.io/status201/pen/wKowKz
   jQuery('.map-container')
     .click(function(){
       jQuery(this).find('iframe').addClass('clicked')})
