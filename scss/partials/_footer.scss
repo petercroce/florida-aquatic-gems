@@ -18,6 +18,21 @@
   background: #fff;
   border-top: $border;
   padding: $vertical_margin 0;
+  .container {
+    @include device(smartphone, tablet, laptop) {
+      padding: 0 5vw;
+    }
+    a {
+      color: $brand_gray_light;
+      &:hover {
+        color: $brand_primary;
+      }
+      i {
+        font-size: 3rem;
+        padding-left: 50px;
+      }
+    }
+  }
 }
 
 #post-footer {
@@ -30,8 +45,14 @@
   }
   .paragraph{
     font-size: 1rem !important;
+    a {
+      color: $brand_gray_light;
+      &:hover {
+        color: $brand_primary;
+      }
+    }
   }
   :last-child {
     margin-bottom: 0;
-  }  
+  }
 }
