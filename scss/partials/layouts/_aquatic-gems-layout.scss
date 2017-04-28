@@ -14,6 +14,9 @@
     #expanded-info__written {
       width: 100%;
       padding: 50px;
+      @include device(smartphone, tablet, laptop) {
+        padding: 50px 5vw;
+      }
     }
     #expanded-info__map {
       width: 100%;
@@ -35,6 +38,37 @@
       }
       .map-container iframe.clicked {
       	pointer-events: auto;
+      }
+    }
+  }
+}
+
+
+#main, #expanded-info {
+  a[href^="http"] {
+    &:after {
+      font-family: $icon_font_family;
+      content: $icon_font_paperclip;
+      padding-left: 10px;
+    }
+  }
+  .paragraph {
+    a {
+      color: $brand_gray_dark;
+    }
+    ul {
+      li {
+        list-style: none !important;
+        line-height: 3.5rem;
+        @include device(smartphone) {line-height: 2.5rem;}
+        padding-left: 1rem !important;
+        &:before {
+          font-family: $icon_font_family;
+          content: $icon_font_angle_right;
+          display: inline-block;
+          margin-left: -1.3em;
+          width: 1.3em;
+        }
       }
     }
   }

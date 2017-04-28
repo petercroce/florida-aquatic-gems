@@ -1,6 +1,19 @@
 .sections-page {
   #main {
     padding: 0 !important;
+    .wsite-section-wrap {
+      &:nth-of-type(odd) {
+        background-color: #f4f2f2;
+      }
+      .container {
+        max-width: none;
+        padding: 0 !important;
+        .wsite-multicol-col {
+          @include device(desktop) {padding: 0 50px !important;}
+          @include device(smartphone, tablet, laptop) {padding: 0 5vw !important;}
+        }
+      }
+    }
   }
 }
 
