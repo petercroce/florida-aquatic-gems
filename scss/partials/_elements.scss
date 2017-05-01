@@ -5,6 +5,7 @@
 
 ::selection {
   background: $brand_gray_dark;
+  color: $brand_primary;
 }
 
 body {
@@ -99,7 +100,7 @@ main {
     }
   }
   b, strong {
-    font-weight: 400 !important;
+    font-weight: 600 !important;
   }
 
   .wsite-content-title {
