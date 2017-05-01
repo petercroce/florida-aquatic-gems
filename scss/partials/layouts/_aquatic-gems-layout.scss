@@ -2,6 +2,7 @@
 
 }
 #expanded-info {
+  background-color: #f1f1f1;
   display: flex;
   @include device(smartphone) {flex-direction: column;}
   @include device(tablet, laptop, desktop) {}
@@ -45,29 +46,36 @@
 
 
 #main, #expanded-info {
-  a[href^="http"] {
-    &:after {
-      font-family: $icon_font_family;
-      content: $icon_font_paperclip;
-      padding-left: 10px;
-    }
-  }
   .paragraph {
     a {
-      color: $brand_gray_dark;
+      color: $brand_gray_light;
+      &:hover {
+        color: $brand_primary;
+      }
     }
     ul {
+      // Change this value to change the overall list indentation.
+      padding-left: 1em !important;
       li {
         list-style: none !important;
-        line-height: 3.5rem;
-        @include device(smartphone) {line-height: 2.5rem;}
+        margin-bottom: 1em !important;
         padding-left: 1rem !important;
+        &:first-of-type {
+          margin-top: 1em !important;
+        }
         &:before {
           font-family: $icon_font_family;
           content: $icon_font_angle_right;
           display: inline-block;
           margin-left: -1.3em;
           width: 1.3em;
+        }
+        a[href^="http"] {
+          &:after {
+            font-family: $icon_font_family;
+            content: $icon_font_paperclip;
+            padding-left: 10px;
+          }
         }
       }
     }
