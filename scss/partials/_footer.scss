@@ -40,6 +40,16 @@
   padding: 15px 0;
   border-top: $border;
 
+  .container {
+    @include device(smartphone) {
+      padding: 0 5vw;
+      .wsite-multicol-col {
+        .paragraph {
+          text-align: left !important;
+        }
+      }
+    }
+  }
   .wsite-multicol-col {
     vertical-align: middle;
   }

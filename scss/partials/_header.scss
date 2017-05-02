@@ -31,9 +31,14 @@
   #header {
     min-height: 100vh;
     .wsite-elements, .wsite-section-wrap {
-      height: 100vh;
+      min-height: 100vh;
       .wsite-section {
         min-height: 100vh;
+        .wsite-section-content {
+          @include device(smartphone) {
+            padding-top: 100px;
+          }
+        }
       }
     }
   }
