@@ -6,11 +6,10 @@
         background-color: #f1f1f1;
         .container {
           max-width: 1000px;
-          padding: 0 5vw;
         }
       }
       .container {
-        padding: 0;
+        padding: 0 5vw;
         .wsite-multicol-col {
           @include device(desktop) {padding: 0 50px !important;}
           @include device(smartphone, tablet, laptop) {padding: 0 5vw !important;}

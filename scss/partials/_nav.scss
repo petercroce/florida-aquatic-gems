@@ -24,7 +24,7 @@
   text-align: left;
 
   background-image: linear-gradient($brand_gray_light, transparent);
-  overflow: hidden;
+  overflow-y: scroll;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -38,8 +38,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    @include device(tablet) {margin: 5vw;}
-    @include device(laptop, desktop) {margin: 10vh 5vw;}
+    @include device(tablet, laptop, desktop) {margin: 10vh 5vw;}
     max-width: 1500px;
     // What's our site-wide max-width going to be?
     ul.wsite-menu-default {
@@ -49,8 +48,10 @@
       justify-content: flex-start;
       width: 100%;
       @include device(smartphone) {
+        // Mobile nav styles including the extra space at top and bottom
+        // for the fade indicating there are more below/above
         overflow-y: scroll;
-        margin-top: 80px;
+        padding: 80px 0;
         font-size: 1.5rem;
       }
       @include device(tablet) {font-size: 1.5rem;}
@@ -115,7 +116,32 @@ body.nav-open {
   .nav-outer-wrap {
     visibility: visible !important;
     opacity: 1 !important;
-    z-index: 3;
+    z-index: 4;
+    @include device(smartphone){
+      background-image: none;
+      background-color: $brand_primary;
+      // These pseudo elements are the fade at the bottom/top of  mobile nav
+      &:before {
+        background-image: linear-gradient(transparent, $brand_primary);
+        z-index: 5;
+        content: "";
+        position: absolute;
+        height: 80px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+      }
+      &:after {
+        background-image: linear-gradient($brand_primary, transparent);
+        z-index: 5;
+        content: "";
+        position: absolute;
+        height: 80px;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
   }
   #nav {
     .hamburger {
