@@ -1,10 +1,35 @@
 #nav {
   .hamburger {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 60px;
+    right: 80px;
+    transition: all 0.4s ease;
     @include device(laptop, tablet, smartphone) {top: 15px; right: 15px;};
     z-index: 4;
+    @include device(desktop) {
+      border: 2px solid $brand_primary;
+      background-color: $brand_primary;
+      // padding: 23px 33px;
+      // brand primary on hover when nav is closed
+      &:hover {
+        opacity: 1;
+        background-color: transparent;
+        .hamburger-inner {
+          background-color: $brand_primary;
+          &:before,
+          &:after {
+            background-color: $brand_primary;
+          }
+        }
+        &:before {
+          color: $brand_primary;
+        }
+      }
+      padding: 0;
+      height: 72px;
+      width: 200px;
+      padding-top: 2px;
+    }
     &:before {
       content: "Menu";
       color: #fff;
@@ -12,7 +37,6 @@
       font-size: $font_size;
       padding-right: 20px;
       vertical-align: top;
-      transition: all 0.4s ease;
       position: relative;
     }
   }
@@ -23,8 +47,8 @@
   justify-content: center;
   text-align: left;
 
-  background-image: linear-gradient($brand_gray_light, transparent);
-  overflow-y: scroll;
+  background-color: rgba($brand_primary, .95);
+  overflow: hidden;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -33,12 +57,11 @@
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   visibility: hidden;
   opacity: 0;
-  z-index: 1;
+  z-index: 4;
   .nav-inner-wrap {
     width: 100%;
     display: flex;
     flex-direction: column;
-    @include device(tablet, laptop, desktop) {margin: 10vh 5vw;}
     max-width: 1500px;
     // What's our site-wide max-width going to be?
     ul.wsite-menu-default {
@@ -47,28 +70,39 @@
       flex-wrap: wrap;
       justify-content: flex-start;
       width: 100%;
-      @include device(smartphone) {
-        // Mobile nav styles including the extra space at top and bottom
-        // for the fade indicating there are more below/above
-        overflow-y: scroll;
+      @include device(smartphone, tablet) {
+        // Extra space at top and bottom creates a
+        // fade indicating there are more below/above
+        overflow-y: auto;
         padding: 80px 0;
         font-size: 1.5rem;
       }
-      @include device(tablet) {font-size: 1.5rem;}
+      @include device(laptop) {
+        // Extra space at top and bottom creates a
+        // fade indicating there are more below/above
+        overflow-y: auto;
+        padding: 10vh 5vw;
+      }
+      @include device(desktop) {
+        // Extra space at top and bottom creates a
+        // fade indicating there are more below/above
+        overflow-y: auto;
+        padding: 10vh 0;
+      }
+      @include device(tablet) {font-size: 3rem;}
       @include device(laptop) {font-size: 1.5rem;}
       @include device(desktop) {font-size: 2.3rem;}
       li.wsite-menu-item-wrap {
         // Styles for the specific menu items
         width: 100%;
-        @include device(tablet) {width: 50%;}
-        @include device(desktop, laptop) {width: 33.33%;}
+        @include device(laptop, desktop) {width: 33.33%;}
         padding-left: 0;
         margin-bottom: 0;
         a {
           color: #fff;
           // Boxes around the items
-          @include device(tablet, laptop, desktop) {
-            background-color: rgba($brand_gray_dark, 0.3);
+          @include device(laptop, desktop) {
+            background-color: rgba($brand_gray_dark, 0.05);
           }
           display: block;
           padding: 0.2em;
@@ -77,11 +111,13 @@
           margin-bottom: 0.2em;
           margin-right: 0.2em;
           &:hover {
-            background-color: rgba($brand_primary, 0.2);
+            background-color: rgba(255,213,255,.2);
           }
           &:before {
             font-family: $icon_font_family;
             content: $icon_font_map-pin;
+            display: inline-block;
+            width: 1.3em;
           }
         }
         // Only the first li should have the map icon
@@ -90,12 +126,16 @@
             font-family: $icon_font_family;
             content: $icon_font_map;
             padding-right: 3px;
+            display: inline-block;
+            width: 1.3em;
           }
         }
         &#active {
           a {
-            @include device(tablet, laptop, desktop) {
-              background-color: rgba($brand_primary, 0.2);
+            background-color: rgba(255,213,255,.2);
+            @include device(smartphone, tablet) {
+              padding-right: 0;
+              margin-right: 0;
             }
           }
         }
@@ -116,37 +156,61 @@ body.nav-open {
   .nav-outer-wrap {
     visibility: visible !important;
     opacity: 1 !important;
-    z-index: 4;
-    @include device(smartphone){
-      background-image: none;
-      background-color: $brand_primary;
-      // These pseudo elements are the fade at the bottom/top of  mobile nav
-      &:before {
-        background-image: linear-gradient(transparent, $brand_primary);
-        z-index: 5;
-        content: "";
-        position: absolute;
-        height: 80px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-      }
-      &:after {
-        background-image: linear-gradient($brand_primary, transparent);
-        z-index: 5;
-        content: "";
-        position: absolute;
-        height: 80px;
-        width: 100%;
-        top: 0;
-        left: 0;
-      }
+
+
+    background-image: none;
+    // These pseudo elements are the fade at the bottom/top nav
+    &:before {
+      background-image: linear-gradient(transparent, $brand_primary);
+      z-index: 5;
+      content: "";
+      position: absolute;
+      height: 80px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+    &:after {
+      background-image: linear-gradient($brand_primary, transparent);
+      z-index: 5;
+      content: "";
+      position: absolute;
+      height: 80px;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
   }
   #nav {
     .hamburger {
+      @include device(desktop) {
+        border: 2px solid $brand_primary;
+        background-color: rgba($brand_gray_dark, 0.05);
+      }
       &:before {
         content: "Close";
+      }
+      // white on hover when nav is open
+      &:hover {
+        @include device(desktop) {background-color: rgba(255,213,255,.2);}
+        .hamburger-inner {
+          background-color: #fff;
+          &:before,
+          &:after {
+            background-color: #fff;
+          }
+        }
+        &:before {
+          color: #fff;
+        }
+      }
+      .hamburger-inner,
+      .hamburger-inner:before {
+        color: #fff;
+        opacity: 1;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -157,9 +221,7 @@ body.nav-open {
   .site-menu {
     z-index: 50;
   }
-  .hamburger .hamburger-inner {
-    color: #fff;
-  }
+
 }
 
 body.no-scroll {
