@@ -1,27 +1,36 @@
 .home-page {
-  #nav {
-    .container {
-      .nav-outer-wrap {
-        @include device(smartphone) {
-          visibility: hidden;
-          opacity: 0;
-          background-color: #fff;
-          z-index: 4;
-        }
-        @include device(tablet, laptop, desktop) {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
-      .site-menu {
-        @include device(smartphone) {
-          display: block;
-        }
-        @include device(tablet, laptop, desktop) {
-          display: none;
-        }
-      }
+  #header {
+    &:before {
+      background-color: rgba($brand_gray_light, 0.65);
     }
+  }
+  #nav {
+    // .container {
+    //   .nav-outer-wrap {
+    //     @include device(smartphone, tablet) {
+    //       visibility: hidden;
+    //       opacity: 0;
+    //       z-index: 4;
+    //     }
+    //     @include device(laptop, desktop) {
+    //       visibility: visible;
+    //       opacity: 1;
+    //       background-color: rgba($brand_gray_light, 0.15);
+    //       .wsite-menu-default {
+    //         max-height: 50vh;
+    //         overflow-y: auto;
+    //       }
+    //     }
+    //   }
+    //   .site-menu {
+    //     @include device(smartphone, tablet) {
+    //       display: block;
+    //     }
+    //     @include device(laptop, desktop) {
+    //       display: none;
+    //     }
+    //   }
+    // }
   }
   // Do not display any divs following a script tag
   // with a src value ending in scripts.min.js.
