@@ -87,7 +87,7 @@
         // Extra space at top and bottom creates a
         // fade indicating there are more below/above
         overflow-y: auto;
-        padding: 10vh 0;
+        padding: 15vh 0;
       }
       @include device(tablet) {font-size: 3rem;}
       @include device(laptop) {font-size: 1.5rem;}
@@ -122,12 +122,20 @@
         }
         // Only the first li should have the map icon
         &:first-of-type {
-          a:before {
-            font-family: $icon_font_family;
-            content: $icon_font_map;
-            padding-right: 3px;
-            display: inline-block;
-            width: 1.3em;
+          a {
+            color: $brand_primary !important;
+            background-color: rgba(255,255,255, 0.85) !important;
+            @include device(smartphone, tablet) {
+              padding-right: 0;
+              margin-right: 0;
+            }
+            &:before {
+              font-family: $icon_font_family;
+              content: $icon_font_map;
+              padding-right: 3px;
+              display: inline-block;
+              width: 1.3em;
+            }
           }
         }
         &#active {
