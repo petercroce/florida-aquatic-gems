@@ -12,7 +12,9 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   // For mobile safari
-  -webkit-overflow-scrolling: touch;
+  @include device(smartphone, tablet) {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
