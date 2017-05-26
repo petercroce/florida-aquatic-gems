@@ -9,7 +9,7 @@
         }
       }
       .container {
-        padding: 0 5vw;
+        @include device(smartphone, tablet, laptop){padding: 0 5vw;}
         .wsite-multicol-col {
           @include device(desktop) {padding: 0 50px !important;}
           @include device(smartphone, tablet, laptop) {padding: 0 5vw !important;}

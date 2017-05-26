@@ -238,13 +238,13 @@ a {
   &, &.wsite-button-large {
     padding: 8px 32px;
     border-width: 2px;
-    font-size: 18px !important;
+    font-size: $font_size_paragraph !important;
   }
 
   &.wsite-button-small {
     padding: 6px 24px;
     border-width: 2px;
-    font-size: 14px !important;
+    font-size: $font_size_paragraph * 0.75 !important;
   }
 
   .wsite-button-inner {
