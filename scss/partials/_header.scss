@@ -4,16 +4,17 @@
   h1, h2, .paragraph {
     color: #fff;
   }
-  &:before {
-    background-image: linear-gradient(transparent, rgba($brand_gray_light, 0.65) 95%);
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
+  // Overlays removed at client request. Saving here for possible reintroduction.
+  // &:before {
+  //   background-image: linear-gradient(transparent, rgba($brand_gray_light, 0.65) 95%);
+  //   content: "";
+  //   position: absolute;
+  //   height: 100%;
+  //   width: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: 1;
+  // }
   .wsite-section {
     @include device(smartphone, tablet, laptop) {padding: 0;}
     .container {
@@ -46,6 +47,7 @@
   }
 }
 
+// Overlays removed at client request. Saving here for possible reintroduction.
 .header--gray-overlay {
   #header {
     .wsite-section {
@@ -53,14 +55,14 @@
       // Headers with image BG
       &.wsite-section-bg-image {
         &:after {
-          background-color: rgba($brand_gray_light, 0.3);
+          // background-color: rgba($brand_gray_light, 0.2);
         }
       }
 
       // Headers with video BG
       &.wsite-section-bg-video {
         &:after {
-          background-color: rgba($brand_gray_light, 0.3);
+          // background-color: rgba($brand_gray_light, 0.3);
         }
       }
 
