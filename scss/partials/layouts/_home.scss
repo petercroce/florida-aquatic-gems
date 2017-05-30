@@ -1,7 +1,21 @@
 .home-page {
   #header {
-    &:before {
-      background-color: rgba($brand_gray_light, 0.65);
+    .wsite-section {
+
+      // Headers with image BG
+      &.wsite-section-bg-image {
+        &:after {
+          background-color: rgba($brand_gray_light, 0.2);
+        }
+      }
+
+      // Headers with video BG
+      &.wsite-section-bg-video {
+        &:after {
+          background-color: rgba($brand_gray_light, 0.2);
+        }
+      }
+
     }
   }
   #nav {
