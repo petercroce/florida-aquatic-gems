@@ -32,6 +32,17 @@
         padding-left: 50px;
       }
     }
+    // Align social media links left on mobile.
+    @include device(smartphone) {
+      .social-media-links {
+        text-align: left;
+        a:first-of-type {
+          i {
+            padding-left: 0;
+          }
+        }
+      }
+    }
   }
 }
 
