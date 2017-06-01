@@ -30,14 +30,16 @@
       width: 200px;
       padding-top: 2px;
     }
-    &:before {
-      content: "Menu";
-      color: #fff;
-      font-family: $font_stack;
-      font-size: $font_size_paragraph;
-      padding-right: 20px;
-      vertical-align: top;
-      position: relative;
+    @include device(tablet, laptop, desktop) {
+      &:before {
+        content: "Menu";
+        color: #fff;
+        font-family: $font_stack;
+        font-size: $font_size_paragraph;
+        padding-right: 20px;
+        vertical-align: top;
+        position: relative;
+      }
     }
   }
 }
@@ -202,8 +204,10 @@ body.nav-open {
         border: 2px solid rgba($brand_primary, 0.25);
         background-color: rgba($brand_gray_dark, 0.05);
       }
-      &:before {
-        content: "Close";
+      @include device(tablet, laptop, desktop) {
+        &:before {
+          content: "Close";
+        }
       }
       // white on hover when nav is open
       &:hover {

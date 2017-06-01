@@ -18,43 +18,14 @@
 
     }
   }
-  #nav {
-    // .container {
-    //   .nav-outer-wrap {
-    //     @include device(smartphone, tablet) {
-    //       visibility: hidden;
-    //       opacity: 0;
-    //       z-index: 4;
-    //     }
-    //     @include device(laptop, desktop) {
-    //       visibility: visible;
-    //       opacity: 1;
-    //       background-color: rgba($brand_gray_light, 0.15);
-    //       .wsite-menu-default {
-    //         max-height: 50vh;
-    //         overflow-y: auto;
-    //       }
-    //     }
-    //   }
-    //   .site-menu {
-    //     @include device(smartphone, tablet) {
-    //       display: block;
-    //     }
-    //     @include device(laptop, desktop) {
-    //       display: none;
-    //     }
-    //   }
-    // }
-  }
-  // Do not display any divs following a script tag
-  // with a src value ending in scripts.min.js.
+  // Do not display any divs following a script tag.
   //
-  // We do this because Weebly creates divs with padding and
+  // We do this because Weebly appends divs with padding and other things
   // without classes at the end of this page, and we don't want a footer.
   // This is a performance-heavy selector. If a method of removing those
   // elements from the page becomes available in the future,
   // it should be used instead.
-  script[src$="scripts.min.js"] ~ div {
+  script ~ div {
     display: none;
   }
 }
