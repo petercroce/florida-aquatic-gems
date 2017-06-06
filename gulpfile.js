@@ -1,7 +1,6 @@
-// Before you start this project, be sure you install Gulp globally and then
-// run the following commands in your project directory:
-// npm install gulp
-// npm install --save-dev gulp-concat gulp-rename gulp-zip gulp-sass gulp-sass-glob-import gulp-autoprefixer gulp-clean-css gulp-uglify gulp-htmlrender gulp-htmlmin
+// Before you start this project,
+// be sure you install gulp globally and
+// follow the instructions in the README.
 
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
@@ -15,7 +14,8 @@ var gulp = require('gulp'),
     htmlrender = require('gulp-htmlrender'),
     htmlmin = require('gulp-htmlmin'),
     path = require('path'),
-    del = require('del');
+    del = require('del'),
+    imagemin = require('gulp-imagemin');
 
 var dir_path = path.resolve(".").split(path.sep);
 var WEBSITE_NAME = dir_path[dir_path.length - 1].toLowerCase();
@@ -25,6 +25,8 @@ var paths = {
   scss: 'scss/**/*.scss',
   js: 'js/**/*.js',
   html: 'html/**/*.html',
+  tpl: 'weebly_partials/**/*',
+  imgs: 'imgs/**/*',
   dist: 'dist'
 };
 
@@ -34,6 +36,8 @@ gulp.task('watch', function() {
   gulp.watch(paths.scss, ['stylesheets']);
   gulp.watch(paths.js, ['scripts']);
   gulp.watch(paths.html, ['html']);
+  gulp.watch(paths.tpl, ['tpl']);
+  gulp.watch(paths.tpl, ['imgs']);
   gulp.watch([paths.dist + '/*', '!' + paths.dist + '/*.zip'], ['compress']);
 });
 
@@ -86,25 +90,45 @@ gulp.task('html', function() {
 
   .pipe(htmlrender.render())
   // Minify HTML
-  // .pipe(htmlmin({
-  //                 removeComments: true,
-  //                 removeTagWhitespace: true,
-  //                 collapseWhitespace: true,
-  //                 removeScriptTypeAttributes: true,
-  //                 minifyJS: true,
-  //                 minifyCSS: true
-  //               })
-  //       )
+  .pipe(htmlmin({
+                  removeComments: true,
+                  removeTagWhitespace: true,
+                  collapseWhitespace: true,
+                  removeScriptTypeAttributes: true,
+                  minifyJS: true,
+                  minifyCSS: true
+                })
+        )
 
   // Save HTML files to destination
   .pipe(gulp.dest(paths.dist));
 });
 
+// Add Weebly partials
+gulp.task('tpl', function() {
+  return gulp.src(paths.tpl)
+    .pipe(gulp.dest(paths.dist));
+});
+
+// Add and minify images
+gulp.task('imgs', function() {
+  return gulp.src(paths.imgs)
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.dist))
+});
+
 gulp.task('compress', function(){
   // Zip all the files within the dist folder
-  return gulp.src([paths.dist + '/*', '!' + paths.dist + '/*.zip'])
+  return gulp.src([paths.dist + '/**/*', '!' + paths.dist + '/*.zip'])
   .pipe(zip(WEBSITE_NAME +'.zip'))
   .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('default', ['watch', 'clean:dist', 'stylesheets', 'scripts', 'html']);
+gulp.task('default',
+          ['watch',
+          'clean:dist',
+          'stylesheets',
+          'scripts',
+          'html',
+          'tpl',
+          'imgs']);

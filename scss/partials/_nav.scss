@@ -84,7 +84,7 @@
       @include device(laptop) {
         // Extra space at top and bottom creates a
         // fade indicating there are more below/above
-        padding: 10vh 5vw;
+        padding: 15vh 5vw;
       }
       @include device(desktop) {
         // Extra space at top and bottom creates a
