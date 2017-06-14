@@ -101,7 +101,7 @@
         a[href^="http"] {
           &:after {
             font-family: $icon_font_family;
-            content: $icon_font_external_link;
+            content: $icon_font_link;
             padding-left: 10px;
           }
         }
