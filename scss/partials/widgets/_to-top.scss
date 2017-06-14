@@ -1,0 +1,30 @@
+/*
+Usage:
+<a href="#header" id="toTop"></a>
+*/
+
+#toTop {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  overflow: hidden;
+  width: 46px;
+  height: 46px;
+  border: none;
+  z-index: 9999;
+  background: rgba($brand_gray_light, 0.2);
+  text-align: center;
+  color: #fff;
+  &::before {
+    font-size: 1em;
+    vertical-align: middle;
+    position: absolute;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    opacity: 1;
+  }
+  i {
+      line-height: 44px;
+  }
+}

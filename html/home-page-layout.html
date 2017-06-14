@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%include src="partials/meta.html"%>
+</head>
+<body class="aquatic-gem-layout home-page wsite-theme-light header--full header--gray-overlay">
+
+  <%include src="partials/gtm-body.html"%>
+
+  <div id="content" class="content-wrapper sections-page sections--gray-overlay">
+
+    <%include src="partials/header.html"%>
+
+    <div id="photo-gallery">
+      <div class="container">{photo-gallery:content global="false"}</div>
+    </div>
+
+    <%include src="partials/sections.html"%>
+
+    <div id="expanded-info">
+      <div class="container">
+        <div id="expanded-info__written">
+          {expanded-info-written:content global="false"}
+        </div>
+      </div>
+      <div class="container">
+        <div id="expanded-info__map">
+          {expanded-info-map:content global="false"}
+        </div>
+      </div>
+    </div>
+
+    <%include src="partials/footer.html"%>
+
+  </div>
+
+  <%include src="partials/scripts.html"%>
+
+</body>
+</html>
