@@ -18,7 +18,7 @@
   .wsite-section {
     @include device(smartphone, tablet, laptop) {padding: 0;}
     .container {
-      padding: 0;
+      padding: 50px;
       @include device(smartphone, tablet, laptop) {
         max-width: none;
         padding: 0 5vw;
