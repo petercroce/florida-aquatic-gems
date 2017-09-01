@@ -1,7 +1,7 @@
 #nav {
   .hamburger {
     position: absolute;
-    top: 60px;
+    top: 50px;
     right: 80px;
     transition: all 0.4s ease;
     @include device(laptop, tablet, smartphone) {top: 15px; right: 15px;};
@@ -89,7 +89,7 @@
       @include device(desktop) {
         // Extra space at top and bottom creates a
         // fade indicating there are more below/above
-        padding: 15vh 0;
+        padding: 15vh 2vw;
       }
       @include device(tablet) {font-size: 3rem;}
       @include device(laptop) {font-size: 1.5rem;}
