@@ -1,7 +1,7 @@
 Florida Aquatic Gems website
 ===
 
-This repository is the website for [Florida Aquatic Gems](http://www.floridaaquaticgems.com/).
+This repository is the website for [Florida Aquatic Gems](http://www.floridaaquaticgems.com/) by New York Ave, LLC.
 
 FAQ
 ===
